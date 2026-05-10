@@ -1,0 +1,396 @@
+<!-- ========================= -->
+<!-- index.html -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AutoFinder</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h1><span>Auto</span> Finder</h1>
+            <p>Encontre serviços automotivos</p>
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text" placeholder="Buscar serviços, peças ou oficina" />
+
+            <button>
+                <i class="fa-solid fa-sliders"></i>
+            </button>
+
+        </div>
+
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            Localização atual detectada
+        </div>
+
+        <!-- SERVICES -->
+
+        <div class="section-title">
+            Serviços
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="icon">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+
+                <span>Mecânicas</span>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+
+                <span>Peças</span>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+
+                <span>Locadoras</span>
+            </div>
+
+            <div class="service-card active">
+                <div class="icon">
+                    <i class="fa-solid fa-gauge"></i>
+                </div>
+
+                <span>Pneus</span>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <span>Elétrica</span>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">
+                    <i class="fa-solid fa-sparkles"></i>
+                </div>
+
+                <span>Funilaria</span>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+
+                <span>Alinhamento</span>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">
+                    <i class="fa-solid fa-shield"></i>
+                </div>
+
+                <span>Freios</span>
+            </div>
+
+        </div>
+
+        <!-- FILTERS -->
+
+        <div class="section-title">
+            Filtros
+        </div>
+
+        <div class="filters">
+
+            <button class="filter active">
+                <i class="fa-solid fa-location-dot"></i>
+                Mais próximo
+            </button>
+
+            <button class="filter">
+                <i class="fa-solid fa-dollar-sign"></i>
+                Mais barato
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAP -->
+
+    <main class="map-area">
+
+        <div class="grid-overlay"></div>
+
+        <!-- PINS -->
+
+        <div class="pin pin-1"></div>
+        <div class="pin pin-2"></div>
+        <div class="pin pin-3"></div>
+        <div class="pin pin-4"></div>
+        <div class="pin pin-5"></div>
+
+        <!-- USER -->
+
+        <div class="user-location">
+
+            <div class="pulse"></div>
+
+            <div class="user-icon">
+                <i class="fa-solid fa-location-arrow"></i>
+            </div>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h2>6</h2>
+                <p>Estabelecimentos</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <h2>4.7</h2>
+                <p>Avaliação Média</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <h2>5</h2>
+                <p>Abertos Agora</p>
+
+            </div>
+
+        </div>
+
+        <!-- POWERED -->
+
+        <div class="powered">
+            Powered by <span>AutoFinder</span>
+        </div>
+
+        <!-- CONTROLS -->
+
+        <div class="controls">
+
+            <button>
+                <i class="fa-solid fa-location-arrow"></i>
+            </button>
+
+            <button>
+                <i class="fa-solid fa-minus"></i>
+            </button>
+
+        </div>
+
+        <!-- MODAL -->
+
+        <div class="modal-overlay" id="modalOverlay">
+
+            <div class="place-modal">
+
+                <!-- HEADER -->
+
+                <div class="modal-header">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1600&auto=format&fit=crop" />
+
+                    <div class="header-gradient"></div>
+
+                    <div class="open-badge">
+                        Aberto agora
+                    </div>
+
+                    <button class="close-modal" id="closeModal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                    <div class="modal-hero">
+
+                        <div class="modal-distance">
+                            <i class="fa-solid fa-location-dot"></i>
+                            2.5 km
+                        </div>
+
+                        <h1>SpeedParts Auto</h1>
+
+                        <div class="modal-rating">
+
+                            <i class="fa-solid fa-star"></i>
+
+                            4.6 (189 avaliações)
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- BODY -->
+
+                <div class="modal-body">
+
+                    <div class="modal-section">
+
+                        <h2>Sobre</h2>
+
+                        <p>
+                            Maior variedade de peças automotivas da região.
+                            Peças originais e alternativas.
+                        </p>
+
+                    </div>
+
+                    <!-- SERVICES -->
+
+                    <div class="modal-section">
+
+                        <h2>Serviços oferecidos</h2>
+
+                        <div class="modal-services">
+
+                            <div class="modal-service">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Troca de óleo e filtros
+                            </div>
+
+                            <div class="modal-service">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Alinhamento e balanceamento
+                            </div>
+
+                            <div class="modal-service">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Revisão completa
+                            </div>
+
+                            <div class="modal-service">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Diagnóstico eletrônico
+                            </div>
+
+                            <div class="modal-service">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Troca de pastilhas
+                            </div>
+
+                            <div class="modal-service">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Suspensão
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- HOURS -->
+
+                    <div class="modal-section">
+
+                        <h2>Horário de funcionamento</h2>
+
+                        <div class="work-time">
+
+                            <div class="time-left">
+
+                                <i class="fa-regular fa-clock"></i>
+
+                                Segunda à Sexta
+
+                            </div>
+
+                            <strong>08:00 - 18:00</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FOOTER -->
+
+                <div class="modal-footer">
+
+                    <button class="route-btn">
+
+                        <i class="fa-solid fa-location-arrow"></i>
+
+                        Ver rota
+
+                    </button>
+
+                    <button class="call-btn">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        Ligar
+
+                    </button>
+
+                    <button class="whatsapp-btn">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        WhatsApp
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
