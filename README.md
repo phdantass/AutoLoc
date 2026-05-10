@@ -4,6 +4,8 @@ AutoLoc é uma plataforma automotiva moderna inspirada em aplicações como Waze
 
 O projeto foi desenvolvido com foco em experiência do usuário, design premium e navegação intuitiva, oferecendo uma interface futurista e totalmente responsiva para desktop e dispositivos móveis.
 
+Desenvolvido por **Pedro Henrique Dantas Silva** como projeto acadêmico para o **SENAC**, a proposta da AutoLoc é unir tecnologia, mobilidade e praticidade em uma solução visual moderna voltada ao setor automotivo.
+
 ---
 
 # ✨ Objetivo do Projeto
