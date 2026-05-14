@@ -3,118 +3,201 @@
 // =========================
 
 // =========================
-// MAPA
+// MAP
 // =========================
 
 const map = L.map('map', {
 
-  zoomControl: true,
-  minZoom: 6,
-  maxZoom: 18
+  zoomControl:true,
+  minZoom:6,
+  maxZoom:18
 
 });
 
 // =========================
-// LIMITES DO ESTADO
-// SÃO PAULO
+// LIMITES SP
 // =========================
 
 const boundsSP = L.latLngBounds(
 
-  [-25.5, -53.5], // sudoeste
-  [-19.5, -44.0]  // nordeste
+  [-25.5,-53.5],
+  [-19.5,-44.0]
 
 );
 
-// BLOQUEIA FORA DE SP
-
 map.setMaxBounds(boundsSP);
-
-// TRAVA NAS BORDAS
 
 map.options.maxBoundsViscosity = 1.0;
 
-// FOCA NO ESTADO
-
-map.fitBounds(boundsSP);
-
 // =========================
-// TEMA DARK
+// DETECTA TEMA
 // =========================
 
-L.tileLayer(
-  'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+const isLightMode =
+window.matchMedia(
+  '(prefers-color-scheme: light)'
+).matches;
+
+// =========================
+// MAPA LIGHT
+// =========================
+
+const lightMap = L.tileLayer(
+
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+
   {
 
     attribution:
-      '&copy; OpenStreetMap &copy; CARTO'
+    '&copy; OpenStreetMap'
 
   }
 
-).addTo(map);
+);
 
 // =========================
-// ÍCONE PERSONALIZADO
+// MAPA DARK
 // =========================
 
-const customIcon = L.icon({
+const darkMap = L.tileLayer(
 
-  iconUrl:
-    'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+  'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
 
-  iconSize:[42,42],
-  iconAnchor:[21,42],
-  popupAnchor:[0,-35]
+  {
+
+    attribution:
+    '&copy; OpenStreetMap &copy; CARTO'
+
+  }
+
+);
+
+// =========================
+// MAPA INICIAL
+// =========================
+
+if(isLightMode){
+
+  lightMap.addTo(map);
+
+}else{
+
+  darkMap.addTo(map);
+
+}
+
+// =========================
+// ÍCONE CUSTOM
+// =========================
+
+const customIcon = L.divIcon({
+
+  className:'custom-marker',
+
+  html:`
+
+    <div class="marker-glow">
+
+      <div class="marker-inner">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+      </div>
+
+    </div>
+
+  `,
+
+  iconSize:[40,40],
+  iconAnchor:[20,20]
 
 });
 
 // =========================
-// LOCAIS
+// LOCAIS - TATUAPÉ
 // =========================
 
 const places = [
 
   {
-    name:"SpeedParts Auto",
-    lat:-23.55052,
-    lng:-46.633308,
-    rating:"4.8",
+    name:"Tatuapé Auto Center",
+    lat:-23.5408,
+    lng:-46.5735,
+    rating:"4.9",
     type:"Mecânica"
   },
 
   {
-    name:"Auto Center Prime",
-    lat:-22.9068,
-    lng:-47.0626,
-    rating:"4.6",
-    type:"Pneus"
-  },
-
-  {
-    name:"Mecânica Turbo",
-    lat:-23.1791,
-    lng:-45.8872,
-    rating:"4.9",
-    type:"Elétrica"
-  },
-
-  {
-    name:"Garage Motors",
-    lat:-21.1775,
-    lng:-47.8103,
+    name:"Garage Prime Tatuapé",
+    lat:-23.5389,
+    lng:-46.5712,
     rating:"4.7",
     type:"Funilaria"
   },
 
   {
-    name:"CarFix Center",
-    lat:-23.9608,
-    lng:-46.3336,
+    name:"SpeedCar Mecânica",
+    lat:-23.5417,
+    lng:-46.5694,
+    rating:"4.8",
+    type:"Elétrica"
+  },
+
+  {
+    name:"Auto Elétrica Paulista",
+    lat:-23.5432,
+    lng:-46.5751,
+    rating:"4.6",
+    type:"Elétrica"
+  },
+
+  {
+    name:"Center Pneus Tatuapé",
+    lat:-23.5372,
+    lng:-46.5677,
     rating:"4.5",
+    type:"Pneus"
+  },
+
+  {
+    name:"Oficina TurboCar",
+    lat:-23.5395,
+    lng:-46.5780,
+    rating:"4.9",
+    type:"Mecânica"
+  },
+
+  {
+    name:"Power Motors",
+    lat:-23.5424,
+    lng:-46.5659,
+    rating:"4.8",
+    type:"Revisão"
+  },
+
+  {
+    name:"AutoFix Premium",
+    lat:-23.5360,
+    lng:-46.5729,
+    rating:"4.7",
     type:"Freios"
   }
 
 ];
+
+// =========================
+// MODAL
+// =========================
+
+const modalOverlay =
+document.getElementById(
+  "modalOverlay"
+);
+
+const closeModal =
+document.getElementById(
+  "closeModal"
+);
 
 // =========================
 // MARCADORES
@@ -124,7 +207,7 @@ places.forEach(place => {
 
   const marker = L.marker(
 
-    [place.lat, place.lng],
+    [place.lat,place.lng],
 
     { icon:customIcon }
 
@@ -146,53 +229,95 @@ places.forEach(place => {
         🔧 ${place.type}
       </p>
 
-      <button>
-        Ver detalhes
-      </button>
-
     </div>
 
   `);
 
+  // ABRIR MODAL
+
+  marker.on(
+
+    'click',
+
+    () => {
+
+      modalOverlay.classList.add(
+        'active'
+      );
+
+    }
+
+  );
+
 });
 
 // =========================
-// LOCALIZAÇÃO USUÁRIO
+// USUÁRIO
+// SENAC TATUAPÉ
 // =========================
 
-navigator.geolocation.getCurrentPosition(
+const userLat = -23.541132;
+const userLng = -46.57;
 
-  position => {
+// MARCADOR USUÁRIO
 
-    const userLat =
-      position.coords.latitude;
+L.marker(
 
-    const userLng =
-      position.coords.longitude;
+  [userLat,userLng],
 
-    // MARCADOR USUÁRIO
+  {
 
-    L.circleMarker(
+    zIndexOffset:999999,
 
-      [userLat,userLng],
+    icon:L.divIcon({
 
-      {
+      className:'user-marker',
 
-        radius:10,
-        color:"#00d4ff",
-        fillColor:"#00d4ff",
-        fillOpacity:1
+      html:`
 
-      }
+        <div class="user-glow">
 
-    ).addTo(map);
+          <div class="user-inner">
 
-  },
+            <i class="fa-solid fa-location-arrow"></i>
 
-  error => {
+          </div>
 
-    console.log(
-      "Localização não permitida"
+        </div>
+
+      `,
+
+      iconSize:[46,46],
+      iconAnchor:[23,23]
+
+    })
+
+  }
+
+).addTo(map);
+
+// CENTRALIZA
+
+map.setView(
+
+  [userLat,userLng],
+
+  15
+
+);
+
+// =========================
+// FECHAR MODAL
+// =========================
+
+closeModal.addEventListener(
+
+  "click",
+
+  () => {
+
+    modalOverlay.classList.remove(
+      "active"
     );
 
   }
@@ -200,25 +325,61 @@ navigator.geolocation.getCurrentPosition(
 );
 
 // =========================
-// SERVICES ACTIVE
+// FECHAR FORA
+// =========================
+
+modalOverlay.addEventListener(
+
+  "click",
+
+  e => {
+
+    if(
+      e.target === modalOverlay
+    ){
+
+      modalOverlay.classList.remove(
+        "active"
+      );
+
+    }
+
+  }
+
+);
+
+// =========================
+// SERVICE ACTIVE
 // =========================
 
 const serviceCards =
-document.querySelectorAll(".service-card");
+document.querySelectorAll(
+  ".service-card"
+);
 
 serviceCards.forEach(card => {
 
-  card.addEventListener("click", () => {
+  card.addEventListener(
 
-    serviceCards.forEach(c => {
+    "click",
 
-      c.classList.remove("active");
+    () => {
 
-    });
+      serviceCards.forEach(c => {
 
-    card.classList.add("active");
+        c.classList.remove(
+          "active"
+        );
 
-  });
+      });
+
+      card.classList.add(
+        "active"
+      );
+
+    }
+
+  );
 
 });
 
@@ -227,54 +388,62 @@ serviceCards.forEach(card => {
 // =========================
 
 const filters =
-document.querySelectorAll(".filter");
+document.querySelectorAll(
+  ".filter"
+);
 
 filters.forEach(filter => {
 
-  filter.addEventListener("click", () => {
+  filter.addEventListener(
 
-    filters.forEach(f => {
+    "click",
 
-      f.classList.remove("active");
+    () => {
 
-    });
+      filters.forEach(f => {
 
-    filter.classList.add("active");
+        f.classList.remove(
+          "active"
+        );
 
-  });
+      });
+
+      filter.classList.add(
+        "active"
+      );
+
+    }
+
+  );
 
 });
 
 // =========================
-// THEME TOGGLE
+// ALTERA TEMA MAPA
 // =========================
 
-const themeToggle =
-document.getElementById("themeToggle");
+window.matchMedia(
+  '(prefers-color-scheme: light)'
+).addEventListener(
 
-themeToggle.addEventListener("click", () => {
+  'change',
 
-  document.body.classList.toggle(
-    "light-mode"
-  );
+  e => {
 
-  const icon =
-    themeToggle.querySelector("i");
+    if(e.matches){
 
-  if(
-    document.body.classList.contains(
-      "light-mode"
-    )
-  ){
+      map.removeLayer(darkMap);
 
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
+      lightMap.addTo(map);
 
-  }else{
+    }else{
 
-    icon.classList.remove("fa-sun");
-    icon.classList.add("fa-moon");
+      map.removeLayer(lightMap);
+
+      darkMap.addTo(map);
+
+    }
 
   }
 
-});
+);

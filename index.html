@@ -1,198 +1,282 @@
-<!-- ========================= -->
-<!-- index.html -->
-<!-- ========================= -->
-
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoLoc</title>
+  <link rel="stylesheet" href="styleIndex.css" />
 
-    <title>AutoFinder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-    <!-- LEAFLET -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
-
 <body>
 
-    <!-- SIDEBAR -->
+  <header>
 
-    <aside class="sidebar">
+    <div class="logo-area">
 
-        <div class="logo">
-            <h1><span>Auto</span> Finder</h1>
-            <p>Encontre serviços automotivos</p>
+      <div class="menu-btn">☰</div>
+
+      <div class="logo">
+        <div class="logo-circle">AL</div>
+        Auto<span>Loc</span>
+      </div>
+
+    </div>
+
+    <div class="header-icons">
+      🔔
+      👤
+    </div>
+
+  </header>
+
+  <div class="container">
+
+    <section class="hero">
+
+      <div class="tag">✨ OFERTA ESPECIAL</div>
+
+      <h1>Financiamento com até 0% de entrada</h1>
+
+      <p>
+        Encontre o veículo dos seus sonhos com condições exclusivas
+        e experiência premium.
+      </p>
+
+      <button>Ver Ofertas</button>
+
+    </section>
+
+    <section class="stats">
+
+      <div class="stat-card">
+        <h2>+15.000</h2>
+        <p>Vendas realizadas</p>
+      </div>
+
+      <div class="stat-card">
+        <h2>98%</h2>
+        <p>Clientes satisfeitos</p>
+      </div>
+
+      <div class="stat-card">
+        <h2>100%</h2>
+        <p>Garantia premium</p>
+      </div>
+
+    </section>
+
+    <div class="search-area">
+
+      <div class="search-box">
+        <input type="text" placeholder="Buscar veículos, marcas, modelos...">
+      </div>
+
+      <button class="filter-btn">⚙</button>
+
+    </div>
+
+    <div class="filters">
+      <div class="filter">Marca</div>
+      <div class="filter active">Preço</div>
+      <div class="filter">Ano</div>
+      <div class="filter">Categoria</div>
+    </div>
+
+    <div class="section-title">
+      <h2>Veículos em Destaque</h2>
+      <a href="#">Ver todos</a>
+    </div>
+
+    <section class="cars">
+
+      <div class="car-card">
+
+        <div class="car-image">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200" alt="">
         </div>
 
-        <!-- SEARCH -->
+        <div class="car-content">
 
-        <div class="search-box">
+          <h3>Mercedes-Benz AMG GT</h3>
 
-            <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="car-info">
+            <span>2024</span>
+            <span>1.800 km</span>
+          </div>
 
-            <input type="text" placeholder="Buscar serviços, peças ou oficina" />
+          <div class="price">R$ 720.000</div>
 
-            <button id="themeToggle">
-                <i class="fa-solid fa-moon"></i>
-            </button>
-
-        </div>
-
-        <!-- LOCATION -->
-
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            Localização atual detectada
-        </div>
-
-        <!-- SERVICES -->
-
-        <div class="section-title">
-            Serviços
-        </div>
-
-        <div class="services-grid">
-
-            <div class="service-card active">
-                <div class="icon">
-                    <i class="fa-solid fa-wrench"></i>
-                </div>
-
-                <span>Mecânicas</span>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fa-solid fa-box"></i>
-                </div>
-
-                <span>Peças</span>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fa-solid fa-car-side"></i>
-                </div>
-
-                <span>Locadoras</span>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fa-solid fa-gauge"></i>
-                </div>
-
-                <span>Pneus</span>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-
-                <span>Elétrica</span>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fa-solid fa-sparkles"></i>
-                </div>
-
-                <span>Funilaria</span>
-            </div>
-
-        </div>
-
-        <!-- FILTERS -->
-
-        <div class="section-title">
-            Filtros
-        </div>
-
-        <div class="filters">
-
-            <button class="filter active">
-                <i class="fa-solid fa-location-dot"></i>
-                Mais próximo
-            </button>
-
-            <button class="filter">
-                <i class="fa-solid fa-dollar-sign"></i>
-                Mais barato
-            </button>
+          <div class="car-footer">
+            <span>Destaque</span>
+            <button class="details-btn">Ver</button>
+          </div>
 
         </div>
 
-    </aside>
+      </div>
 
-    <!-- MAP -->
+      <div class="car-card">
 
-    <main class="map-area">
+        <div class="car-image">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200" alt="">
+        </div>
 
-        <!-- MAPA -->
-        <div id="map"></div>
+        <div class="car-content">
 
-        <!-- STATS -->
+          <h3>Porsche 911 Carrera</h3>
 
-        <div class="stats">
+          <div class="car-info">
+            <span>2023</span>
+            <span>5.200 km</span>
+          </div>
 
-            <div class="stat-card">
+          <div class="price">R$ 850.000</div>
 
-                <div class="stat-icon blue">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
-
-                <h2>6</h2>
-                <p>Estabelecimentos</p>
-
-            </div>
-
-            <div class="stat-card">
-
-                <div class="stat-icon orange">
-                    <i class="fa-solid fa-star"></i>
-                </div>
-
-                <h2>4.7</h2>
-                <p>Avaliação Média</p>
-
-            </div>
-
-            <div class="stat-card">
-
-                <div class="stat-icon green">
-                    <i class="fa-solid fa-clock"></i>
-                </div>
-
-                <h2>5</h2>
-                <p>Abertos Agora</p>
-
-            </div>
+          <div class="car-footer">
+            <span>Destaque</span>
+            <button class="details-btn">Ver</button>
+          </div>
 
         </div>
 
-        <!-- POWERED -->
+      </div>
 
-        <div class="powered">
-            Powered by <span>AutoFinder</span>
+      <div class="car-card">
+
+        <div class="car-image">
+          <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1200" alt="">
         </div>
 
-    </main>
+        <div class="car-content">
 
-    <!-- LEAFLET -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+          <h3>Ferrari 488 GTB</h3>
 
-    <!-- SCRIPT -->
-    <script src="script.js"></script>
+          <div class="car-info">
+            <span>2023</span>
+            <span>2.100 km</span>
+          </div>
+
+          <div class="price">R$ 2.800.000</div>
+
+          <div class="car-footer">
+            <span>Destaque</span>
+            <button class="details-btn">Ver</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="section-title">
+      <h2>Serviços</h2>
+      <a href="#">Ver todos</a>
+    </div>
+
+    <section class="services">
+
+      <div class="service-card">
+
+        <div class="service-icon">🔧</div>
+
+        <h3>Manutenção</h3>
+
+        <p>
+          Serviços completos para seu veículo com qualidade premium.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">📍</div>
+
+        <h3>Rastreamento</h3>
+
+        <p>
+          GPS em tempo real integrado com monitoramento inteligente.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">🛡</div>
+
+        <h3>Seguro</h3>
+
+        <p>
+          Proteção total para você dirigir com tranquilidade.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">💳</div>
+
+        <h3>Financiamento</h3>
+
+        <p>
+          Condições especiais e aprovação rápida para seu carro.
+        </p>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <nav class="bottom-nav">
+
+    <div class="nav-item active">
+      🏠
+      <span>Início</span>
+    </div>
+
+    <div class="nav-item">
+      🚗
+      <span>Veículos</span>
+    </div>
+
+    <a href="servicos.html"><div class="nav-item">
+      🔧      
+      <span>Serviços</span>
+    </div></a>
+
+    <div class="nav-item">
+      ❤
+      <span>Favoritos</span>
+    </div>
+
+    <div class="nav-item">
+      👤
+      <span>Perfil</span>
+    </div>
+
+  </nav>
+
+  <script>
+
+    const filters = document.querySelectorAll('.filter');
+
+    filters.forEach(filter => {
+
+      filter.addEventListener('click', () => {
+
+        filters.forEach(btn => btn.classList.remove('active'));
+
+        filter.classList.add('active');
+
+      });
+
+    });
+
+  </script>
 
 </body>
-
 </html>

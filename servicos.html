@@ -1,0 +1,450 @@
+<!-- ========================= -->
+<!-- servico.html -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+    <title>AutoFinder</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ICONS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- LEAFLET -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="styleServicos.css" />
+
+        
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <h1>
+                <span>Auto</span> Finder
+            </h1>
+
+            <p>
+                Encontre serviços automotivos
+            </p>
+
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                placeholder="Buscar serviços, peças ou oficina" />
+
+        </div>
+
+        <!-- LOCATION -->
+
+        <div class="location">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            Localização atual detectada
+
+        </div>
+
+        <!-- SERVICES -->
+
+        <div class="section-title">
+            Serviços
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card active">
+
+                <div class="icon">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+
+                <span>Mecânicas</span>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+
+                <span>Peças</span>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+
+                <span>Locadoras</span>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-gauge"></i>
+                </div>
+
+                <span>Pneus</span>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <span>Elétrica</span>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-sparkles"></i>
+                </div>
+
+                <span>Funilaria</span>
+
+            </div>
+
+        </div>
+
+        <!-- FILTERS -->
+
+        <div class="section-title">
+            Filtros
+        </div>
+
+        <div class="filters">
+
+            <button class="filter active">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Mais próximo
+
+            </button>
+
+            <button class="filter">
+
+                <i class="fa-solid fa-dollar-sign"></i>
+
+                Mais barato
+
+            </button>
+
+            <button class="filter"
+                id="filterToggle">
+
+                <i class="fa-solid fa-filter"></i>
+
+                Filtros
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAP -->
+
+    <main class="map-area">
+
+        <div id="map"></div>
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+                <h2>6</h2>
+
+                <p>Estabelecimentos</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <h2>4.7</h2>
+
+                <p>Avaliação Média</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <h2>5</h2>
+
+                <p>Abertos Agora</p>
+
+            </div>
+
+        </div>
+
+        <!-- POWERED -->
+
+        <div class="powered">
+
+            Powered by
+            <span>AutoFinder</span>
+
+        </div>
+
+    </main>
+
+    <!-- MODAL -->
+
+    <div class="modal-overlay"
+        id="modalOverlay">
+
+        <div class="modal-card">
+
+            <button class="close-modal"
+                id="closeModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <!-- BANNER -->
+
+            <div class="modal-banner">
+
+                <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?q=80&w=1600&auto=format&fit=crop"
+                    alt="Oficina">
+
+                <div class="banner-overlay"></div>
+
+                <div class="status-badge">
+                    Aberto agora
+                </div>
+
+                <div class="modal-info">
+
+                    <span class="distance">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        1.2 km
+
+                    </span>
+
+                    <h2>
+                        AutoMaster Premium
+                    </h2>
+
+                    <div class="rating">
+
+                        <i class="fa-solid fa-star"></i>
+
+                        4.8
+                        <span>(342 avaliações)</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CONTENT -->
+
+            <div class="modal-content">
+
+                <div class="modal-section">
+
+                    <h3>Sobre</h3>
+
+                    <p>
+                        Mecânica especializada em carros importados e nacionais.
+                        Atendimento premium 24h.
+                    </p>
+
+                </div>
+
+                <!-- TAGS -->
+
+                <div class="modal-section">
+
+                    <h3>
+                        Serviços oferecidos
+                    </h3>
+
+                    <div class="service-tags">
+
+                        <div class="tag">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Troca de óleo e filtros
+
+                        </div>
+
+                        <div class="tag">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Alinhamento e balanceamento
+
+                        </div>
+
+                        <div class="tag">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Revisão completa
+
+                        </div>
+
+                        <div class="tag">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Diagnóstico eletrônico
+
+                        </div>
+
+                        <div class="tag">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Suspensão
+
+                        </div>
+
+                        <div class="tag">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Freios
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- HORÁRIO -->
+
+                <div class="modal-section">
+
+                    <h3>
+                        Horário de funcionamento
+                    </h3>
+
+                    <div class="schedule">
+
+                        <div>
+
+                            <i class="fa-regular fa-clock"></i>
+
+                            Segunda a Sexta
+
+                        </div>
+
+                        <strong>
+                            08:00 - 18:00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+                <button class="route-btn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Ver rota
+
+                </button>
+
+                <button class="call-btn">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    Ligar
+
+                </button>
+
+                <button class="whatsapp-btn">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    WhatsApp
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- LEAFLET -->
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- SCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
