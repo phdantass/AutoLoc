@@ -146,6 +146,11 @@ body{
 
 }
 
+a{
+  text-decoration:none;
+  color: #ffffff;
+}
+
 /* ========================= */
 /* SIDEBAR */
 /* ========================= */
@@ -174,9 +179,15 @@ body{
 /* LOGO */
 /* ========================= */
 
-.logo h1{
+.logo{
 
-  font-size:42px;
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  font-size:34px;
 
   font-weight:800;
 
@@ -186,11 +197,28 @@ body{
   color:var(--gold);
 }
 
-.logo p{
+.logo-circle{
 
-  margin-top:8px;
+  width:48px;
+  height:48px;
 
-  color:var(--muted);
+  border-radius:50%;
+
+  background:
+  linear-gradient(
+    135deg,
+    var(--gold-light),
+    var(--gold-dark)
+  );
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  color:#000;
+
+  font-weight:800;
 
   font-size:15px;
 
@@ -1110,3 +1138,4 @@ body{
   }
 
 }
+
