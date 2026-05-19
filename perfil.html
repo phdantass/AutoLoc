@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoLoc | Perfil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260519-theme" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="profile">
+  <header class="site-header">
+    <a class="brand" href="consumidor.html"><span class="brand-mark">AL</span><span class="brand-name">Auto<span>Loc</span></span></a>
+    <nav class="desktop-nav" aria-label="Navegacao principal">
+      <a href="consumidor.html">Inicio</a><a href="veiculos.html">Veiculos</a><a href="servicos.html">Servicos</a><a href="favoritos.html">Favoritos <span data-favorite-count>0</span></a>
+    </nav>
+    <div class="header-actions"><a class="icon-btn" href="favoritos.html"><i data-lucide="heart"></i></a><a class="profile-link active" href="perfil.html"><i data-lucide="user"></i></a></div>
+  </header>
+
+  <main class="container">
+    <section class="profile-hero">
+      <div class="profile-avatar" data-profile-initials>PS</div>
+      <div>
+        <span class="eyebrow">Area do cliente</span>
+        <h1 data-profile-name>Pedro Silva</h1>
+        <p><span data-profile-email>pedro@email.com</span> &middot; <span data-profile-phone>(11) 99999-0000</span></p>
+      </div>
+    </section>
+
+    <section class="profile-grid">
+      <form class="profile-card-large" data-profile-form>
+        <div class="section-title compact">
+          <div><span class="section-kicker">Dados pessoais</span><h2>Meu perfil</h2></div>
+        </div>
+
+        <label>Nome completo<input name="name" type="text" required /></label>
+        <label>Email<input name="email" type="email" required /></label>
+        <label>Telefone<input name="phone" type="tel" required /></label>
+
+        <label class="switch-row">
+          <span><strong>Notificacoes</strong><small>Receber novidades e alertas dos favoritos.</small></span>
+          <input name="notifications" type="checkbox" />
+        </label>
+
+        <label class="switch-row">
+          <span><strong>Financiamento</strong><small>Permitir contato sobre simulacoes e condicoes.</small></span>
+          <input name="financing" type="checkbox" />
+        </label>
+
+        <button class="primary-btn" type="submit">Salvar alteracoes</button>
+      </form>
+
+      <aside class="profile-side">
+        <article class="stat-card"><strong data-favorite-count>0</strong><span>Favoritos salvos</span></article>
+        <article class="mini-card"><i data-lucide="shield-check"></i><h3>Conta protegida</h3><p>Seus dados ficam neste navegador para personalizar a experiencia.</p></article>
+        <article class="mini-card"><i data-lucide="headphones"></i><h3>Consultoria ativa</h3><p>Registre interesse em um veiculo para iniciar o atendimento.</p></article>
+      </aside>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegacao inferior">
+    <a class="nav-item" href="consumidor.html"><i data-lucide="home"></i>Inicio</a>
+    <a class="nav-item" href="veiculos.html"><i data-lucide="car"></i>Veiculos</a>
+    <a class="nav-item" href="servicos.html"><i data-lucide="wrench"></i>Servicos</a>
+    <a class="nav-item" href="favoritos.html"><i data-lucide="heart"></i>Favoritos</a>
+    <a class="nav-item active" href="perfil.html"><i data-lucide="user"></i>Perfil</a>
+  </nav>
+  <script src="script.js?v=20260518-fix"></script>
+</body>
+</html>
+
+

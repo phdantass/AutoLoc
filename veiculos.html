@@ -1,546 +1,95 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>AutoLoc • Veículos</title>
-
-  <link rel="stylesheet" href="styleIndex.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoLoc | Veiculos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260519-theme" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
-
-<body>
-
-  <header>
-
-    <div class="logo-area">
-
-      <a href="index.html" class="back-btn">
-        ←
-      </a>
-
-      <div class="logo">
-        <div class="logo-circle">AL</div>
-        Auto<span>Loc</span>
-      </div>
-
+<body data-page="vehicles">
+  <header class="site-header">
+    <a class="brand" href="consumidor.html"><span class="brand-mark">AL</span><span class="brand-name">Auto<span>Loc</span></span></a>
+    <nav class="desktop-nav" aria-label="Navegacao principal">
+      <a href="consumidor.html">Inicio</a><a class="active" href="veiculos.html">Veiculos</a><a href="servicos.html">Servicos</a><a href="favoritos.html">Favoritos <span data-favorite-count>0</span></a>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-btn" href="favoritos.html" aria-label="Favoritos"><i data-lucide="heart"></i></a>
+      <a class="profile-link" href="perfil.html" aria-label="Perfil"><i data-lucide="user"></i></a>
     </div>
-
-    <div class="header-icons">
-      🔔
-      👤
-    </div>
-
   </header>
 
-  <div class="container">
-
-    <!-- HERO -->
-
-    <section class="vehicles-hero">
-
-      <div class="vehicles-overlay"></div>
-
-      <div class="vehicles-hero-content">
-
-        <span class="vehicles-tag">
-          🚗 PREMIUM CARS
-        </span>
-
-        <h1>
-          Encontre o veículo ideal para você
-        </h1>
-
-        <p>
-          Explore veículos premium com condições especiais,
-          baixa quilometragem e garantia exclusiva.
-        </p>
-
-      </div>
-
+  <main class="container">
+    <section class="page-hero vehicles-banner">
+      <span class="eyebrow">Catalogo completo</span>
+      <h1>Escolha com dados claros, fotos fortes e curadoria premium.</h1>
+      <p>Filtre por marca, categoria, ano ou preco. Todos os veiculos passam por vistoria e validacao de procedencia.</p>
     </section>
 
-    <!-- SEARCH -->
-
-    <div class="search-area">
-
+    <section class="toolbar" aria-label="Busca e organizacao">
       <div class="search-box">
-
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Buscar veículo..."
-        >
-
+        <i data-lucide="search"></i>
+        <input data-search type="search" placeholder="Buscar veiculo, marca, categoria ou combustivel" />
       </div>
-
-      <button class="filter-btn">
-        🔍
-      </button>
-
-    </div>
-
-    <!-- FILTERS -->
-
-    <div class="filters">
-
-      <div class="filter active" data-filter="todos">
-        Todos
-      </div>
-
-      <div class="filter" data-filter="sedan">
-        Sedan
-      </div>
-
-      <div class="filter" data-filter="esportivo">
-        Esportivo
-      </div>
-
-      <div class="filter" data-filter="suv">
-        SUV
-      </div>
-
-      <div class="filter" data-filter="luxo">
-        Luxo
-      </div>
-
-    </div>
-
-    <!-- TITLE -->
-
-    <div class="section-title">
-
-      <h2>Veículos Disponíveis</h2>
-
-      <a href="#">
-        +12 veículos
-      </a>
-
-    </div>
-
-    <!-- VEHICLES -->
-
-    <section class="cars" id="carsContainer">
-
-      <!-- CAR 1 -->
-
-      <div class="car-card" data-category="esportivo luxo">
-
-        <div class="car-badge">
-          Destaque
-        </div>
-
-        <div class="car-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200"
-            alt=""
-          >
-
-        </div>
-
-        <div class="car-content">
-
-          <h3>Mercedes AMG GT</h3>
-
-          <div class="car-info">
-            <span>2024</span>
-            <span>1.800 km</span>
-          </div>
-
-          <div class="price">
-            R$ 720.000
-          </div>
-
-          <div class="car-footer">
-
-            <span class="status available">
-              Disponível
-            </span>
-
-            <button class="details-btn">
-              Ver detalhes
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CAR 2 -->
-
-      <div class="car-card" data-category="esportivo luxo">
-
-        <div class="car-badge">
-          Novo
-        </div>
-
-        <div class="car-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200"
-            alt=""
-          >
-
-        </div>
-
-        <div class="car-content">
-
-          <h3>Porsche 911 Carrera</h3>
-
-          <div class="car-info">
-            <span>2023</span>
-            <span>5.200 km</span>
-          </div>
-
-          <div class="price">
-            R$ 850.000
-          </div>
-
-          <div class="car-footer">
-
-            <span class="status available">
-              Disponível
-            </span>
-
-            <button class="details-btn">
-              Ver detalhes
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CAR 3 -->
-
-      <div class="car-card" data-category="luxo sedan">
-
-        <div class="car-badge">
-          Premium
-        </div>
-
-        <div class="car-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200"
-            alt=""
-          >
-
-        </div>
-
-        <div class="car-content">
-
-          <h3>BMW Série 7</h3>
-
-          <div class="car-info">
-            <span>2024</span>
-            <span>900 km</span>
-          </div>
-
-          <div class="price">
-            R$ 690.000
-          </div>
-
-          <div class="car-footer">
-
-            <span class="status available">
-              Disponível
-            </span>
-
-            <button class="details-btn">
-              Ver detalhes
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CAR 4 -->
-
-      <div class="car-card" data-category="suv luxo">
-
-        <div class="car-badge">
-          SUV
-        </div>
-
-        <div class="car-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200"
-            alt=""
-          >
-
-        </div>
-
-        <div class="car-content">
-
-          <h3>Range Rover Sport</h3>
-
-          <div class="car-info">
-            <span>2024</span>
-            <span>3.500 km</span>
-          </div>
-
-          <div class="price">
-            R$ 580.000
-          </div>
-
-          <div class="car-footer">
-
-            <span class="status available">
-              Disponível
-            </span>
-
-            <button class="details-btn">
-              Ver detalhes
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CAR 5 -->
-
-      <div class="car-card" data-category="sedan">
-
-        <div class="car-badge">
-          Oferta
-        </div>
-
-        <div class="car-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200"
-            alt=""
-          >
-
-        </div>
-
-        <div class="car-content">
-
-          <h3>Audi A5</h3>
-
-          <div class="car-info">
-            <span>2022</span>
-            <span>12.000 km</span>
-          </div>
-
-          <div class="price">
-            R$ 320.000
-          </div>
-
-          <div class="car-footer">
-
-            <span class="status available">
-              Disponível
-            </span>
-
-            <button class="details-btn">
-              Ver detalhes
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CAR 6 -->
-
-      <div class="car-card" data-category="suv">
-
-        <div class="car-badge">
-          SUV
-        </div>
-
-        <div class="car-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200"
-            alt=""
-          >
-
-        </div>
-
-        <div class="car-content">
-
-          <h3>Jeep Compass</h3>
-
-          <div class="car-info">
-            <span>2023</span>
-            <span>15.000 km</span>
-          </div>
-
-          <div class="price">
-            R$ 189.000
-          </div>
-
-          <div class="car-footer">
-
-            <span class="status available">
-              Disponível
-            </span>
-
-            <button class="details-btn">
-              Ver detalhes
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
+      <select class="select" data-sort aria-label="Ordenar veiculos">
+        <option value="recommended">Recomendados</option>
+        <option value="price-asc">Menor preco</option>
+        <option value="price-desc">Maior preco</option>
+        <option value="year-desc">Mais novos</option>
+      </select>
     </section>
 
-  </div>
+    <section class="filters" aria-label="Filtros rapidos">
+      <button class="filter active" type="button" data-filter-chip="Todos">Todos</button>
+      <button class="filter" type="button" data-filter-chip="Esportivo">Esportivos</button>
+      <button class="filter" type="button" data-filter-chip="SUV">SUV</button>
+      <button class="filter" type="button" data-filter-chip="Porsche">Porsche</button>
+      <button class="filter" type="button" data-filter-chip="BMW">BMW</button>
+      <button class="filter" type="button" data-filter-chip="Audi">Audi</button>
+    </section>
 
-  <!-- NAVBAR -->
-
-  <nav class="bottom-nav">
-
-    <a href="index.html">
-
-      <div class="nav-item">
-        🏠
-        <span>Início</span>
+    <section class="content-section">
+      <div class="section-title">
+        <div><span class="section-kicker">Disponiveis agora</span><h2>Veiculos selecionados</h2></div>
       </div>
+      <div class="cars" data-vehicles-grid></div>
+    </section>
+  </main>
 
-    </a>
-
-    <div class="nav-item active">
-      🚗
-      <span>Veículos</span>
-    </div>
-
-    <a href="servicos.html">
-
-      <div class="nav-item">
-        🔧
-        <span>Serviços</span>
-      </div>
-
-    </a>
-
-    <div class="nav-item">
-      ❤
-      <span>Favoritos</span>
-    </div>
-
-    <div class="nav-item">
-      👤
-      <span>Perfil</span>
-    </div>
-
+  <nav class="bottom-nav" aria-label="Navegacao inferior">
+    <a class="nav-item" href="consumidor.html"><i data-lucide="home"></i>Inicio</a>
+    <a class="nav-item active" href="veiculos.html"><i data-lucide="car"></i>Veiculos</a>
+    <a class="nav-item" href="servicos.html"><i data-lucide="wrench"></i>Servicos</a>
+    <a class="nav-item" href="favoritos.html"><i data-lucide="heart"></i>Favoritos</a>
+    <a class="nav-item" href="perfil.html"><i data-lucide="user"></i>Perfil</a>
   </nav>
 
-  <script>
+  <div class="modal" id="vehicle-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-card" aria-label="Detalhes do veiculo">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar"><i data-lucide="x"></i></button>
+      <img data-modal-image src="" alt="" />
+      <div class="modal-body">
+        <div class="modal-heading">
+          <div><span class="section-kicker">Detalhes do veiculo</span><h2 data-modal-title></h2></div>
+          <button class="favorite-btn modal-fav" type="button" data-modal-favorite><i data-lucide="heart"></i></button>
+        </div>
+        <p data-modal-description></p>
+        <div class="car-info modal-meta" data-modal-meta></div>
+        <ul class="spec-list" data-modal-specs></ul>
+        <div class="modal-footer">
+          <strong data-modal-price></strong>
+          <button class="primary-btn" type="button" data-modal-interest data-interest="">Tenho interesse</button>
+        </div>
+      </div>
+    </section>
+  </div>
 
-    // FILTER ACTIVE
-
-    const filters = document.querySelectorAll('.filter');
-
-    filters.forEach(filter => {
-
-      filter.addEventListener('click', () => {
-
-        filters.forEach(btn =>
-          btn.classList.remove('active')
-        );
-
-        filter.classList.add('active');
-
-        const category =
-        filter.dataset.filter;
-
-        const cards =
-        document.querySelectorAll('.car-card');
-
-        cards.forEach(card => {
-
-          const cardCategory =
-          card.dataset.category;
-
-          if(
-            category === 'todos' ||
-            cardCategory.includes(category)
-          ){
-
-            card.style.display = 'block';
-
-          }else{
-
-            card.style.display = 'none';
-
-          }
-
-        });
-
-      });
-
-    });
-
-    // SEARCH
-
-    const searchInput =
-    document.getElementById('searchInput');
-
-    searchInput.addEventListener('keyup', () => {
-
-      const value =
-      searchInput.value.toLowerCase();
-
-      const cards =
-      document.querySelectorAll('.car-card');
-
-      cards.forEach(card => {
-
-        const title =
-        card.querySelector('h3')
-        .innerText
-        .toLowerCase();
-
-        if(title.includes(value)){
-
-          card.style.display = 'block';
-
-        }else{
-
-          card.style.display = 'none';
-
-        }
-
-      });
-
-    });
-
-    // DETAILS BUTTON
-
-    const detailButtons =
-    document.querySelectorAll('.details-btn');
-
-    detailButtons.forEach(button => {
-
-      button.addEventListener('click', () => {
-
-        alert(
-          'Página de detalhes em desenvolvimento 🚗'
-        );
-
-      });
-
-    });
-
-  </script>
-
+  <script src="script.js?v=20260518-fix"></script>
 </body>
 </html>
+
+

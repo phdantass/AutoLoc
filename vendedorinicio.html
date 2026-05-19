@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoLoc | Inicio do Vendedor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260519-theme" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="seller-home">
+  <header class="site-header seller-header">
+    <a class="brand" href="vendedorinicio.html" aria-label="Inicio do vendedor AutoLoc">
+      <span class="brand-mark">AL</span>
+      <span class="brand-name">Auto<span>Loc</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegacao do vendedor">
+      <a class="active" href="vendedorinicio.html">Inicio</a>
+      <a href="vendedorpainel.html">Loja</a>
+      <a href="vendedorveiculos.html">Veiculos</a>
+      <a href="vendedorservicos.html">Servicos</a>
+      <a href="consumidor.html">Ver consumidor</a>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-btn" href="index.html" aria-label="Sair" data-clear-role><i data-lucide="log-out"></i></a>
+    </div>
+  </header>
+
+  <main class="seller-shell" data-seller-dashboard>
+    <section class="seller-hero seller-hero-dashboard">
+      <div>
+        <span class="section-kicker">Painel do vendedor</span>
+        <h1>Veja seu negocio como o consumidor ve.</h1>
+        <p>Controle sua loja, estoque, servicos e produtos com acesso rapido as telas que impactam sua presenca no AutoLoc.</p>
+      </div>
+      <div class="seller-status" data-seller-status>Perfil em configuracao</div>
+    </section>
+
+    <section class="seller-stats" aria-label="Resumo do vendedor">
+      <article><strong data-seller-store-name>Loja sem nome</strong><span>Loja cadastrada</span></article>
+      <article><strong data-seller-vehicle-count>0</strong><span>Veiculos ativos</span></article>
+      <article><strong data-seller-service-count>0</strong><span>Servicos ativos</span></article>
+      <article><strong data-seller-product-count>0</strong><span>Produtos ativos</span></article>
+    </section>
+
+    <section class="seller-action-grid">
+      <a class="seller-action-card" href="vendedorpainel.html">
+        <i data-lucide="store"></i>
+        <h2>Cadastro da loja</h2>
+        <p>Atualize nome, telefone, endereco, horario e apresentacao publica.</p>
+      </a>
+      <a class="seller-action-card" href="vendedorveiculos.html">
+        <i data-lucide="car"></i>
+        <h2>Veiculos a venda</h2>
+        <p>Cadastre o estoque que o consumidor podera encontrar e comparar.</p>
+      </a>
+      <a class="seller-action-card" href="vendedorservicos.html">
+        <i data-lucide="wrench"></i>
+        <h2>Servicos e produtos</h2>
+        <p>Gerencie manutencoes, pecas, acessorios e disponibilidade.</p>
+      </a>
+      <a class="seller-action-card" href="consumidor.html">
+        <i data-lucide="eye"></i>
+        <h2>Visualizar consumidor</h2>
+        <p>Abra a experiencia publica e volte ao painel pela barra superior.</p>
+      </a>
+    </section>
+  </main>
+
+  <script src="script.js?v=20260518-seller-final"></script>
+</body>
+</html>

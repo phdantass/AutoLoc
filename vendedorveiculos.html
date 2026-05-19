@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoLoc | Veiculos do Vendedor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260519-theme" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="seller-vehicles">
+  <header class="site-header seller-header">
+    <a class="brand" href="vendedorinicio.html"><span class="brand-mark">AL</span><span class="brand-name">Auto<span>Loc</span></span></a>
+    <nav class="desktop-nav" aria-label="Navegacao do vendedor">
+      <a href="vendedorinicio.html">Inicio</a><a href="vendedorpainel.html">Loja</a><a class="active" href="vendedorveiculos.html">Veiculos</a><a href="vendedorservicos.html">Servicos</a><a href="veiculos.html">Ver consumidor</a>
+    </nav>
+    <div class="header-actions"><a class="icon-btn" href="index.html" aria-label="Sair" data-clear-role><i data-lucide="log-out"></i></a></div>
+  </header>
+
+  <main class="seller-shell">
+    <section class="seller-page-heading">
+      <div><span class="section-kicker">Estoque</span><h1>Veiculos que voce esta vendendo.</h1><p>Cadastre modelos com preco, ano, quilometragem e status para controlar seu estoque.</p></div>
+      <a class="secondary-btn" href="veiculos.html">Ver vitrine do consumidor</a>
+    </section>
+
+    <section class="seller-grid">
+      <form class="seller-card seller-form" data-vehicle-form>
+        <div class="seller-card-title"><span><i data-lucide="car"></i></span><div><h2>Cadastrar veiculo</h2><p>Adicione os principais dados de venda.</p></div></div>
+        <label>Modelo<input name="name" type="text" placeholder="Ex: Porsche 911 Carrera" required /></label>
+        <label>Marca<input name="brand" type="text" placeholder="Porsche" /></label>
+        <label>Ano<input name="year" type="number" min="1980" max="2030" placeholder="2024" /></label>
+        <label>Quilometragem<input name="km" type="number" min="0" placeholder="5200" /></label>
+        <label>Preco<input name="price" type="number" min="0" step="1000" placeholder="850000" /></label>
+        <label>Status<select name="status"><option value="Ativo">Ativo</option><option value="Pausado">Pausado</option><option value="Vendido">Vendido</option></select></label>
+        <label class="full-field">Descricao<textarea name="description" rows="3" placeholder="Estado, opcionais, garantia e diferenciais"></textarea></label>
+        <button class="primary-btn" type="submit">Adicionar veiculo</button>
+      </form>
+
+      <div class="seller-card">
+        <div class="seller-card-title"><span><i data-lucide="clipboard-list"></i></span><div><h2>Veiculos cadastrados</h2><p data-vehicle-list-count>0 itens</p></div></div>
+        <div class="seller-list" data-seller-vehicles></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=20260518-seller-final"></script>
+</body>
+</html>

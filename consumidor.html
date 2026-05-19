@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AutoLoc, plataforma premium para compra, financiamento e cuidado automotivo." />
+  <title>AutoLoc | Veiculos Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260519-theme" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="consumidor.html" aria-label="AutoLoc, pagina inicial">
+      <span class="brand-mark">AL</span>
+      <span class="brand-name">Auto<span>Loc</span></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegacao principal">
+      <a class="active" href="consumidor.html">Inicio</a>
+      <a href="veiculos.html">Veiculos</a>
+      <a href="servicos.html">Servicos</a>
+      <a href="favoritos.html">Favoritos <span data-favorite-count>0</span></a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" type="button" aria-label="Notificacoes"><i data-lucide="bell"></i></button>
+      <a class="profile-link" href="perfil.html" aria-label="Perfil do usuario"><i data-lucide="user"></i></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <span class="eyebrow">Oferta especial por tempo limitado</span>
+        <h1 id="hero-title">Seu proximo carro premium com uma experiencia simples e segura.</h1>
+        <p>Compare modelos selecionados, simule financiamento e reserve seu veiculo com atendimento consultivo do inicio ao fim.</p>
+
+        <div class="hero-actions">
+          <a class="primary-btn" href="veiculos.html">Ver ofertas</a>
+          <a class="secondary-btn" href="#destaques">Explorar destaques</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Resumo da oferta">
+        <span>Entrada a partir de</span>
+        <strong>0%</strong>
+        <p>Aprovacao rapida, historico verificado e garantia premium inclusa.</p>
+      </aside>
+    </section>
+
+    <section class="stats" aria-label="Indicadores AutoLoc">
+      <article class="stat-card"><strong>+15 mil</strong><span>Vendas realizadas</span></article>
+      <article class="stat-card"><strong>98%</strong><span>Clientes satisfeitos</span></article>
+      <article class="stat-card"><strong>100%</strong><span>Veiculos revisados</span></article>
+    </section>
+
+    <section class="search-section" aria-label="Busca de veiculos">
+      <div class="search-box">
+        <i data-lucide="search" aria-hidden="true"></i>
+        <input data-home-search type="search" placeholder="Buscar por marca, modelo ou categoria" />
+      </div>
+      <a class="filter-btn" href="veiculos.html"><i data-lucide="sliders-horizontal" aria-hidden="true"></i> Filtros</a>
+    </section>
+
+    <section id="destaques" class="content-section" aria-labelledby="featured-title">
+      <div class="section-title">
+        <div>
+          <span class="section-kicker">Curadoria AutoLoc</span>
+          <h2 id="featured-title">Veiculos em destaque</h2>
+        </div>
+        <a href="veiculos.html">Ver todos</a>
+      </div>
+      <div class="cars" data-home-vehicles></div>
+    </section>
+
+    <section class="content-section" aria-labelledby="services-title">
+      <div class="section-title">
+        <div>
+          <span class="section-kicker">Pos-venda completo</span>
+          <h2 id="services-title">Servicos AutoLoc</h2>
+        </div>
+        <a href="servicos.html">Ver todos</a>
+      </div>
+      <div class="services" data-home-services></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegacao inferior">
+    <a class="nav-item active" href="consumidor.html"><i data-lucide="home"></i>Inicio</a>
+    <a class="nav-item" href="veiculos.html"><i data-lucide="car"></i>Veiculos</a>
+    <a class="nav-item" href="servicos.html"><i data-lucide="wrench"></i>Servicos</a>
+    <a class="nav-item" href="favoritos.html"><i data-lucide="heart"></i>Favoritos</a>
+    <a class="nav-item" href="perfil.html"><i data-lucide="user"></i>Perfil</a>
+  </nav>
+
+  <div class="modal" id="vehicle-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-card" aria-label="Detalhes do veiculo">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar"><i data-lucide="x"></i></button>
+      <img data-modal-image src="" alt="" />
+      <div class="modal-body">
+        <div class="modal-heading">
+          <div>
+            <span class="section-kicker">Detalhes do veiculo</span>
+            <h2 data-modal-title></h2>
+          </div>
+          <button class="favorite-btn modal-fav" type="button" data-modal-favorite><i data-lucide="heart"></i></button>
+        </div>
+        <p data-modal-description></p>
+        <div class="car-info modal-meta" data-modal-meta></div>
+        <ul class="spec-list" data-modal-specs></ul>
+        <div class="modal-footer">
+          <strong data-modal-price></strong>
+          <button class="primary-btn" type="button" data-modal-interest data-interest="">Tenho interesse</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js?v=20260518-auth"></script>
+</body>
+</html>
+
+

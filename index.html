@@ -2,281 +2,126 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutoLoc</title>
-  <link rel="stylesheet" href="styleIndex.css" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoLoc | Entrar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260519-theme" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
-<body>
+<body data-page="login">
+  <main class="login-home">
+    <div class="login-blur login-blur-one"></div>
+    <div class="login-blur login-blur-two"></div>
 
-  <header>
+    <section class="login-card-shell">
+      <div class="login-side">
+        <form class="login-box" data-login-form>
+          <div class="login-tabs" role="tablist" aria-label="Tipo de acesso">
+            <button class="active" type="button" data-auth-tab="login">Entrar</button>
+            <button type="button" data-auth-tab="signup">Criar Conta</button>
+          </div>
 
-    <div class="logo-area">
+          <h1 data-auth-title>Bem-vindo!</h1>
+          <p class="login-subtitle" data-auth-subtitle>Entre na sua conta para continuar.</p>
 
-      <div class="menu-btn">☰</div>
+          <div class="login-role-toggle" aria-label="Escolha seu perfil">
+            <button class="active" type="button" data-login-role="consumer">
+              <i data-lucide="user-round"></i>
+              Consumidor
+            </button>
+            <button type="button" data-login-role="seller">
+              <i data-lucide="store"></i>
+              Vendedor
+            </button>
+          </div>
 
-      <div class="logo">
-        <div class="logo-circle">AL</div>
-        Auto<span>Loc</span>
+          <label class="login-input-group">
+            <span>Email</span>
+            <input name="email" type="email" placeholder="Digite seu email" autocomplete="email" />
+          </label>
+
+          <label class="login-input-group">
+            <span>Senha</span>
+            <input name="password" type="password" placeholder="Digite sua senha" autocomplete="current-password" />
+          </label>
+
+          <div class="login-options">
+            <label>
+              <input type="checkbox" />
+              Lembrar de mim
+            </label>
+            <a href="#">Esqueceu a senha?</a>
+          </div>
+
+          <button class="login-submit" type="submit">Entrar</button>
+
+          <div class="login-divider">ou continue com</div>
+
+          <button class="login-social" type="button">
+            <span>G</span>
+            Google
+          </button>
+
+          <p class="login-terms">
+            Ao continuar, voce concorda com nossos
+            <span>Termos de Uso</span> e
+            <span>Politica de Privacidade</span>.
+          </p>
+        </form>
       </div>
 
-    </div>
+      <div class="login-info-side">
+        <a class="login-logo" href="index.html" aria-label="AutoLoc">
+          <span class="brand-mark">AL</span>
+          <span>Auto<b>Loc</b></span>
+        </a>
 
-    <div class="header-icons">
-      🔔
-      👤
-    </div>
+        <p class="login-top-text">Encontre oficinas e servicos automotivos com facilidade.</p>
 
-  </header>
+        <div class="login-feature">
+          <div class="login-feature-icon"><i data-lucide="search"></i></div>
+          <div>
+            <h3>Busca Inteligente</h3>
+            <p>Encontre oficinas, servicos e veiculos rapidamente.</p>
+          </div>
+        </div>
 
-  <div class="container">
+        <div class="login-feature">
+          <div class="login-feature-icon"><i data-lucide="star"></i></div>
+          <div>
+            <h3>Avaliacoes Reais</h3>
+            <p>Veja informacoes claras antes de decidir.</p>
+          </div>
+        </div>
 
-    <section class="hero">
+        <div class="login-feature">
+          <div class="login-feature-icon"><i data-lucide="zap"></i></div>
+          <div>
+            <h3>Atendimento Rapido</h3>
+            <p>Fale com vendedores, oficinas e lojas com poucos cliques.</p>
+          </div>
+        </div>
 
-      <div class="tag">✨ OFERTA ESPECIAL</div>
-
-      <h1>Financiamento com até 0% de entrada</h1>
-
-      <p>
-        Encontre o veículo dos seus sonhos com condições exclusivas
-        e experiência premium.
-      </p>
-
-      <button>Ver Ofertas</button>
-
+        <div class="login-stats">
+          <article>
+            <h2>1.2K+</h2>
+            <span>Oficinas</span>
+          </article>
+          <article>
+            <h2>5K+</h2>
+            <span>Usuarios</span>
+          </article>
+          <article>
+            <h2>4.9</h2>
+            <span>Avaliacao</span>
+          </article>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section class="stats">
-
-      <div class="stat-card">
-        <h2>+15.000</h2>
-        <p>Vendas realizadas</p>
-      </div>
-
-      <div class="stat-card">
-        <h2>98%</h2>
-        <p>Clientes satisfeitos</p>
-      </div>
-
-      <div class="stat-card">
-        <h2>100%</h2>
-        <p>Garantia premium</p>
-      </div>
-
-    </section>
-
-    <div class="search-area">
-
-      <div class="search-box">
-        <input type="text" placeholder="Buscar veículos, marcas, modelos...">
-      </div>
-
-      <button class="filter-btn">⚙</button>
-
-    </div>
-
-    <div class="filters">
-      <div class="filter">Marca</div>
-      <div class="filter active">Preço</div>
-      <div class="filter">Ano</div>
-      <div class="filter">Categoria</div>
-    </div>
-
-    <div class="section-title">
-      <h2>Veículos em Destaque</h2>
-      <a href="#">Ver todos</a>
-    </div>
-
-    <section class="cars">
-
-      <div class="car-card">
-
-        <div class="car-image">
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200" alt="">
-        </div>
-
-        <div class="car-content">
-
-          <h3>Mercedes-Benz AMG GT</h3>
-
-          <div class="car-info">
-            <span>2024</span>
-            <span>1.800 km</span>
-          </div>
-
-          <div class="price">R$ 720.000</div>
-
-          <div class="car-footer">
-            <span>Destaque</span>
-            <button class="details-btn">Ver</button>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="car-card">
-
-        <div class="car-image">
-          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200" alt="">
-        </div>
-
-        <div class="car-content">
-
-          <h3>Porsche 911 Carrera</h3>
-
-          <div class="car-info">
-            <span>2023</span>
-            <span>5.200 km</span>
-          </div>
-
-          <div class="price">R$ 850.000</div>
-
-          <div class="car-footer">
-            <span>Destaque</span>
-            <button class="details-btn">Ver</button>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="car-card">
-
-        <div class="car-image">
-          <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1200" alt="">
-        </div>
-
-        <div class="car-content">
-
-          <h3>Ferrari 488 GTB</h3>
-
-          <div class="car-info">
-            <span>2023</span>
-            <span>2.100 km</span>
-          </div>
-
-          <div class="price">R$ 2.800.000</div>
-
-          <div class="car-footer">
-            <span>Destaque</span>
-            <button class="details-btn">Ver</button>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <div class="section-title">
-      <h2>Serviços</h2>
-      <a href="#">Ver todos</a>
-    </div>
-
-    <section class="services">
-
-      <div class="service-card">
-
-        <div class="service-icon">🔧</div>
-
-        <h3>Manutenção</h3>
-
-        <p>
-          Serviços completos para seu veículo com qualidade premium.
-        </p>
-
-      </div>
-
-      <div class="service-card">
-
-        <div class="service-icon">📍</div>
-
-        <h3>Rastreamento</h3>
-
-        <p>
-          GPS em tempo real integrado com monitoramento inteligente.
-        </p>
-
-      </div>
-
-      <div class="service-card">
-
-        <div class="service-icon">🛡</div>
-
-        <h3>Seguro</h3>
-
-        <p>
-          Proteção total para você dirigir com tranquilidade.
-        </p>
-
-      </div>
-
-      <div class="service-card">
-
-        <div class="service-icon">💳</div>
-
-        <h3>Financiamento</h3>
-
-        <p>
-          Condições especiais e aprovação rápida para seu carro.
-        </p>
-
-      </div>
-
-    </section>
-
-  </div>
-
-  <nav class="bottom-nav">
-
-    <div class="nav-item active">
-      🏠
-      <span>Início</span>
-    </div>
-
-    <a href="veiculos.html"><div class="nav-item">
-      🚗
-      <span>Veículos</span>
-    </div></a>
-
-    <a href="servicos.html"><div class="nav-item">
-      🔧      
-      <span>Serviços</span>
-    </div></a>
-
-    <div class="nav-item">
-      ❤
-      <span>Favoritos</span>
-    </div>
-
-    <div class="nav-item">
-      👤
-      <span>Perfil</span>
-    </div>
-
-  </nav>
-
-  <script>
-
-    const filters = document.querySelectorAll('.filter');
-
-    filters.forEach(filter => {
-
-      filter.addEventListener('click', () => {
-
-        filters.forEach(btn => btn.classList.remove('active'));
-
-        filter.classList.add('active');
-
-      });
-
-    });
-
-  </script>
-
+  <script src="script.js?v=20260518-login-ui"></script>
 </body>
 </html>
